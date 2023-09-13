@@ -1,10 +1,19 @@
+/* Global styles */
 * {
   box-sizing: border-box;
   text-align: center;
   padding: 5px;
 }
 
-h1 { 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: black;
+}
+
+/* Header styles */
+h1 {
   margin: 10px;
   border: 2px solid;
   border-radius: 8px;
@@ -12,9 +21,10 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   color: whitesmoke;
-  background-color: blueviolet;
+  background: linear-gradient(45deg, #ff00cc, #3333cc); /* Colorful gradient background */
 }
 
+/* Form styles */
 input {
   margin: 10px;
   border: 2px solid;
@@ -24,44 +34,16 @@ input {
   text-transform: uppercase;
   width: 25%;
   font-size: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  color: black;
-  
+/* Input field focus effect */
+input[type="text"]:focus {
+  border-color: dodgerblue;
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
 }
 
-.App {
-  text-align: center;
-}
-
-.table{
-  width: 100%;
-  height: auto;
-}
-
-/* .inlineFields{
-  display: inline;
-  margin-left: 50px;
-} */
-
- /* 
- .searchInput{
-  margin: 0;
-  padding: 0;
-  } */
-
-
-.inputField:placeholder-shown {
-  background-color: ivory;
-  border: 2px solid darkorange;
-  border-radius: 5px;
-}
-
-/*Transaction*/
+/* Table styles */
 table.ui.celled.striped.padded.table {
   border-collapse: separate;
   border-spacing: 0;
@@ -89,15 +71,12 @@ table.ui.celled.striped.padded.table td {
   text-overflow: ellipsis;
 }
 
-table.ui.celled.striped.padded.table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-table.ui.celled.striped.padded.table tr:hover {
+/* Table row hover effect */
+table.ui.celled.striped.padded.table tbody tr:hover {
   background-color: #e5f7ff;
 }
 
-/*AddTransactionForm*/
+/* Form container styles */
 .form-container {
   display: flex;
   justify-content: space-between;
@@ -139,6 +118,7 @@ table.ui.celled.striped.padded.table tr:hover {
   border-radius: 5px;
 }
 
+/* Submit button styles */
 .form-container input[type="submit"] {
   display: block;
   margin: 2em auto 0;
@@ -150,6 +130,22 @@ table.ui.celled.striped.padded.table tr:hover {
   cursor: pointer;
 }
 
+/* Submit button hover effect */
 .form-container input[type="submit"]:hover {
   background-color: #0069d9;
+  color: #fff;
+}
+
+/* Header animation */
+h1 {
+  animation: colorChange 3s infinite alternate;
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: #ff00cc;
+  }
+  100% {
+    background-color: #3333cc;
+  }
 }
